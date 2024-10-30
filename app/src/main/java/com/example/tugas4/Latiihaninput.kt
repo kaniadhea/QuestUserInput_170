@@ -44,7 +44,7 @@ fun Latihaninput(modifier: Modifier = Modifier) {
     var dataJenisK by remember { mutableStateOf("") }
     val dataJK = listOf("Laki - laki", "Perempuan")
 
-    Column (modifier = Modifier.fillMaxSize().padding(16.dp),
+    Column (modifier = modifier.fillMaxSize().padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally){
         Text(text = "Biodata",
             fontWeight = FontWeight.Bold,
@@ -115,8 +115,8 @@ fun Latihaninput(modifier: Modifier = Modifier) {
 
         )
         Button(onClick = {dataNama = nama
-            dataEmail = email
             dataJenisK = jenisK
+            dataEmail = email
             dataNoHp = noHp
             dataAlamat = alamat
                          },modifier = Modifier.padding(vertical = 10.dp)) {
@@ -157,7 +157,7 @@ fun TampilData(
 ) {
     Row(
         modifier = Modifier
-            .fillMaxSize()
+            .fillMaxWidth()
             .padding(16.dp),
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
