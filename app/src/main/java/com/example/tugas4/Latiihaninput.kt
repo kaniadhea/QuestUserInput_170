@@ -64,7 +64,7 @@ fun Latihaninput(modifier: Modifier = Modifier) {
         )
         Row {
             dataJK.forEach { selectedJK ->
-                Row {
+                Row (verticalAlignment = Alignment.CenterVertically){
                     RadioButton(selected = jenisK == selectedJK,
                         onClick = {
                             jenisK = selectedJK
@@ -116,6 +116,7 @@ fun Latihaninput(modifier: Modifier = Modifier) {
         )
         Button(onClick = {dataNama = nama
             dataEmail = email
+            dataJenisK = jenisK
             dataNoHp = noHp
             dataAlamat = alamat
                          },modifier = Modifier.padding(vertical = 10.dp)) {
@@ -128,11 +129,11 @@ fun Latihaninput(modifier: Modifier = Modifier) {
                     isinya = dataNama
                 )
                 TampilData(
-                    judul = "jenisK",
+                    judul = "Jenis Kelamin",
                     isinya = dataJenisK
                 )
                 TampilData(
-                    judul = "email",
+                    judul = "Email",
                     isinya = dataEmail
                 )
                 TampilData(
@@ -162,9 +163,7 @@ fun TampilData(
     ) {
         Text(text = judul, modifier = Modifier.weight(0.8f))
         Text(text = ":", modifier = Modifier.weight(0.2f))
-        Text(
-            text = isinya,
-            modifier = Modifier.weight(2f)
-        )
+        Text(isinya, modifier = Modifier.weight(2f))
+
     }
 }
